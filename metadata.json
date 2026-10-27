@@ -1,0 +1,6 @@
+{
+  "name": "GEN-RPM AI STUDIO",
+  "description": "Generator Rencana Pembelajaran Mendalam (RPM) dan Modul Ajar Otomatis Kurikulum Merdeka untuk Guru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

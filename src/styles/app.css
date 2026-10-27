@@ -1,0 +1,174 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ * Custom stylesheet untuk GEN-RPM AI STUDIO: Tema, Palet, Glassmorphism, & Aturan Cetak Presisi
+ */
+
+:root {
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-800: #1e40af;
+  --accent: #f59e0b;
+}
+
+/* Palet Warna */
+[data-palette="ocean_blue"] {
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-800: #1e40af;
+}
+
+[data-palette="emerald"] {
+  --primary-50: #ecfdf5;
+  --primary-100: #d1fae5;
+  --primary-500: #10b981;
+  --primary-600: #059669;
+  --primary-700: #047857;
+  --primary-800: #065f46;
+}
+
+[data-palette="lavender"] {
+  --primary-50: #faf5ff;
+  --primary-100: #f3e8ff;
+  --primary-500: #a855f7;
+  --primary-600: #9333ea;
+  --primary-700: #7e22ce;
+  --primary-800: #6b21a8;
+}
+
+[data-palette="sunset"] {
+  --primary-50: #fff1f2;
+  --primary-100: #ffe4e6;
+  --primary-500: #f43f5e;
+  --primary-600: #e11d48;
+  --primary-700: #be123c;
+  --primary-800: #9f1239;
+}
+
+[data-palette="golden"] {
+  --primary-50: #fffbeb;
+  --primary-100: #fef3c7;
+  --primary-500: #f59e0b;
+  --primary-600: #d97706;
+  --primary-700: #b45309;
+  --primary-800: #92400e;
+}
+
+[data-palette="monochrome"] {
+  --primary-50: #f8fafc;
+  --primary-100: #f1f5f9;
+  --primary-500: #64748b;
+  --primary-600: #475569;
+  --primary-700: #334155;
+  --primary-800: #1e293b;
+}
+
+/* Glassmorphism theme modifier */
+[data-theme="glass"] .glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark[data-theme="glass"] .glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Document Paper Styling */
+.document-paper {
+  background-color: #ffffff;
+  color: #111827;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  min-height: 297mm;
+  padding: 20mm;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Document Templates */
+[data-doc-template="formal_nasional"] .doc-header {
+  border-bottom: 3px double #1e3a8a;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+[data-doc-template="modern_akademik"] .doc-header {
+  border-left: 6px solid var(--primary-600);
+  padding-left: 16px;
+  text-align: left;
+}
+
+[data-doc-template="infografis"] .doc-card {
+  border-radius: 8px;
+  background-color: #f8fafc;
+  border-left: 4px solid var(--primary-500);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+/* Aturan Cetak (Print Styles) */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Sembunyikan elemen dashboard non-cetak */
+  .no-print,
+  #app-sidebar,
+  #app-topbar,
+  #wizard-tabs-nav,
+  #action-floating-bar,
+  .btn-action,
+  .toast-container,
+  .modal-overlay,
+  #panel-config-modal,
+  #subject-switcher {
+    display: none !important;
+  }
+
+  #main-content-area {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .document-paper {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 10mm 15mm !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+
+  /* Hindari pemotongan tabel dan heading */
+  table, tr, td, th {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+}
